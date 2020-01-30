@@ -1,5 +1,11 @@
-const fs = require('fs');
-const ytdl = require('ytdl-core');
+var fs;
+var ytdl;
+require(['fs'], function (module) {
+    fs = module;
+});
+require(['ytdl-core'], function (module) {
+    ytdl = module;
+});
 
 function ytdownload(url) {
 	var videoName = ytdl.getBasicInfo(url);
