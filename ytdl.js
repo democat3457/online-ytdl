@@ -1,7 +1,5 @@
-define(['require', 'ytdl-core', 'fs'], function (require) {
-    var ytdl = require('ytdl-core');
-	var fs = require('fs');
-});
+const ytdl = require('ytdl-core');
+const fs = require('fs');
 
 function ytdownload(url) {
 	var videoName = ytdl.getBasicInfo(url);
