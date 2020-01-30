@@ -13,13 +13,16 @@ function getFileName(url) {
 
 function download(filename, text) {
   var element = document.createElement('a');
-  element.setAttribute('href', 'data:video/webm;charset=utf-8,' + fs.readFile(filename + '.webm', 'utf-8', (err, data) => { 
+	var content;
+	fs.readFile(filename + '.webm', 'utf-8', (err, data) => { 
     if (err) throw err; 
   
     // Converting Raw Buffer to text 
     // data using tostring function. 
-    return data; 
-	}) );
+    content = data; 
+		console.log(content);
+	});
+  element.setAttribute('href', 'data:video/webm;charset=utf-8,' + content);
   element.setAttribute('download', filename);
 
   element.style.display = 'none';
